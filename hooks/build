@@ -1,5 +1,4 @@
 #!/bin/bash
-env
 docker build . \
 	-t "${PHP_VERSION}-${DOCKER_TAG}_fiber-${UPSTREAM_COMMIT:0:7}" \
 	-t "${DOCKER_TAG}_fiber-latest" \
