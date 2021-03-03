@@ -1,0 +1,3 @@
+[submodule "ext-fiber"]
+	path = ext-fiber
+	url = git@github.com:amphp/ext-fiber.git
