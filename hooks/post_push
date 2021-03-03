@@ -1,0 +1,10 @@
+#!/bin/bash
+set -ex
+
+cd ext-fiber
+UPSTREAM_COMMIT=$(git rev-parse --short HEAD)
+
+TAG="${PHP_VERSION}-${DOCKER_TAG}_fiber-${UPSTREAM_COMMIT}"
+echo $TAG
+#docker tag $IMAGE_NAME $DOCKER_REPO:$TAG
+#docker push $DOCKER_REPO:$TAG
