@@ -2,6 +2,8 @@ FROM php:8.0.1-cli
 
 COPY ext-fiber /usr/src/php/ext/fiber
 
-RUN docker-php-source extract \
+RUN cd /usr/src/php/ext/fiber \
+	&& docker-php-source extract \
 	&& docker-php-ext-install fiber \
+	&& make test \
 	&& docker-php-source delete

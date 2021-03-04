@@ -3,8 +3,8 @@ set -ex
 
 cd ext-fiber
 UPSTREAM_COMMIT=$(git rev-parse --short HEAD)
+PHP_VERSION=$(php -r 'echo phpversion();')
 
 TAG="${PHP_VERSION}-${DOCKER_TAG}_fiber-${UPSTREAM_COMMIT}"
-echo $TAG
-#docker tag $IMAGE_NAME $DOCKER_REPO:$TAG
-#docker push $DOCKER_REPO:$TAG
+docker tag $IMAGE_NAME $DOCKER_REPO:$TAG
+docker push $DOCKER_REPO:$TAG
