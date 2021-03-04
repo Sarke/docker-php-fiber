@@ -1,4 +1,4 @@
-FROM php:8.0.2-apache
+FROM php:8.0.2-cli
 
 COPY ext-fiber /usr/src/php/ext/fiber
 
