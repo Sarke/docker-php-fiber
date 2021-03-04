@@ -8,3 +8,9 @@ PHP_VERSION=$(docker run $IMAGE_NAME php -r 'echo phpversion();')
 TAG="${PHP_VERSION}-${DOCKER_TAG}_fiber-${UPSTREAM_COMMIT}"
 docker tag $IMAGE_NAME $DOCKER_REPO:$TAG
 docker push $DOCKER_REPO:$TAG
+
+if [[ $DOCKER_TAG = "cli" ]]
+then
+	docker tag $IMAGE_NAME $DOCKER_REPO:latest
+	docker push $DOCKER_REPO:latest
+fi
