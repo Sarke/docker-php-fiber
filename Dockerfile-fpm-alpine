@@ -1,0 +1,10 @@
+FROM php:8.0.2-fpm-alpine
+
+COPY ext-fiber /usr/src/php/ext/fiber
+
+RUN cd /usr/src/php/ext/fiber \
+	&& docker-php-source extract \
+	&& docker-php-ext-configure fiber \
+	&& make test \
+	&& docker-php-ext-install fiber \
+	&& docker-php-source delete
