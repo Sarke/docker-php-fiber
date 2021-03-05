@@ -8,7 +8,7 @@ A docker image, based on the offical PHP:8.0 images, that adds the [fiber extens
 docker pull sarkedev/php-fiber
 ```
 
-Use `php-fiber:zts` or `php-fiber:apache` tags as required.  No tag (or `latest`) is the default `cli`.
+Use `php-fiber:cli`, `php-fiber:zts`, `php-fiber:apache`, or `php-fiber:fpm` tags as required.  No tag (or `latest`) is the default based on `fpm` and alpine, since it is much smaller.
 
 To run use the following command in your project root:
 

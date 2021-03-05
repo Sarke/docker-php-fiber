@@ -9,8 +9,10 @@ TAG="${PHP_VERSION}-${DOCKER_TAG}_fiber-${UPSTREAM_COMMIT}"
 docker tag $IMAGE_NAME $DOCKER_REPO:$TAG
 docker push $DOCKER_REPO:$TAG
 
-if [[ $DOCKER_TAG = "cli" ]]
+if [[ $DOCKER_TAG = "fpm-alpine" ]]
 then
 	docker tag $IMAGE_NAME $DOCKER_REPO:latest
 	docker push $DOCKER_REPO:latest
+	docker tag $IMAGE_NAME $DOCKER_REPO:fpm
+	docker push $DOCKER_REPO:fpm
 fi
