@@ -1,4 +1,4 @@
-FROM php:8.0.8-zts
+FROM php:8.0.10-zts
 
 COPY ext-fiber /usr/src/php/ext/fiber
 
